@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Argon2", "1 - Argon2", "{C3FE0A46-951F-435E-9E86-963EB6C5D881}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Sha1", "4 - Sha1", "{479F3E56-382A-473B-901A-0DF80143F35F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - BCrypt", "2 - BCrypt", "{934F7995-6103-4622-A5BB-A5EE3B232D6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - SCrypt", "3 - SCrypt", "{E2AF984F-2F49-4872-BF10-40BDA3457E2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{F5F64DBA-F6B4-4FBA-9682-E8563717D9F1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hashers", "Hashers", "{FD24EAD2-40CE-4DF2-8F2A-508EA64856BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashers.Examples", "src\Examples\Hashers.Examples\Hashers.Examples.csproj", "{27CA1A4D-E3F5-4AC2-8713-1A5B75F10890}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashers.Argon2", "src\Hashers\Hashers.Argon2\Hashers.Argon2.csproj", "{C34A0300-ED32-49B9-90F4-3F768B1F2BF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27CA1A4D-E3F5-4AC2-8713-1A5B75F10890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CA1A4D-E3F5-4AC2-8713-1A5B75F10890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CA1A4D-E3F5-4AC2-8713-1A5B75F10890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27CA1A4D-E3F5-4AC2-8713-1A5B75F10890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34A0300-ED32-49B9-90F4-3F768B1F2BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34A0300-ED32-49B9-90F4-3F768B1F2BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34A0300-ED32-49B9-90F4-3F768B1F2BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34A0300-ED32-49B9-90F4-3F768B1F2BF6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3FE0A46-951F-435E-9E86-963EB6C5D881} = {FD24EAD2-40CE-4DF2-8F2A-508EA64856BA}
+		{479F3E56-382A-473B-901A-0DF80143F35F} = {FD24EAD2-40CE-4DF2-8F2A-508EA64856BA}
+		{934F7995-6103-4622-A5BB-A5EE3B232D6A} = {FD24EAD2-40CE-4DF2-8F2A-508EA64856BA}
+		{E2AF984F-2F49-4872-BF10-40BDA3457E2B} = {FD24EAD2-40CE-4DF2-8F2A-508EA64856BA}
+		{27CA1A4D-E3F5-4AC2-8713-1A5B75F10890} = {F5F64DBA-F6B4-4FBA-9682-E8563717D9F1}
+		{C34A0300-ED32-49B9-90F4-3F768B1F2BF6} = {C3FE0A46-951F-435E-9E86-963EB6C5D881}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14B2BA67-91D5-4F23-A3A6-3FD97D5074D2}
+	EndGlobalSection
+EndGlobal
