@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Hashers\Hashers.Argon2\Hashers.Argon2.csproj" />
+    <ProjectReference Include="..\..\Hashers\Hashers.BCrypt\Hashers.BCrypt.csproj" />
+    <ProjectReference Include="..\..\Hashers\Hashers.SCrypt\Hashers.SCrypt.csproj" />
+    <ProjectReference Include="..\..\Hashers\Hashers.Sha1\Hashers.Sha1.csproj" />
   </ItemGroup>
 
   <ItemGroup>

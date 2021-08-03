@@ -1,7 +1,8 @@
-﻿using Isopoh.Cryptography.Argon2;
+﻿using Hashers.Interfaces;
+using Isopoh.Cryptography.Argon2;
 using System.Text;
 
-namespace Hashers.Argon
+namespace Hashers.Services
 {
     public class Argon2idHasher : IArgon2idHasher
     {

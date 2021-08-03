@@ -1,7 +1,9 @@
-﻿using Hashers.Argon;
+﻿using Hashers.Interfaces;
+using Hashers.Services;
 using Isopoh.Cryptography.Argon2;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Scrypt;
 using System;
 using System.IO;
 using System.Text;
@@ -12,7 +14,12 @@ namespace Hashers.Examples
     {
         private static void ConfigureService(this IServiceCollection services)
         {
+            var configuration = GetConfigurationEnvironment();
+
             services.AddScoped<IArgon2idHasher>((_) => new Argon2idHasher(GetArgon2Config()));
+            services.AddScoped<IBCryptHasher>((_) => new BCryptHasher(configuration["BCrypt:Salt"]));
+            services.AddScoped<ISCryptHasher>((_) => new SCryptHasher(new ScryptEncoder()));
+            services.AddScoped<ISha1Hasher, Sha1Hasher>();
         }
 
         private static ServiceProvider GetServiceProvider()
@@ -56,10 +63,38 @@ namespace Hashers.Examples
             
             string myPassword = "Password to hash!";
 
-            var argon2idHasher = serviceProvider.GetService<IArgon2idHasher>();
+            #region Argon2
 
+            var argon2idHasher = serviceProvider.GetService<IArgon2idHasher>();
             Func<string> argon2HashDelegate = () => argon2idHasher.Hash(myPassword);
             ShowHashProcessData("Argon2", myPassword, argon2HashDelegate);
+
+            #endregion
+
+            #region BCrypt
+
+            var bcryptHasher = serviceProvider.GetService<IBCryptHasher>();
+            Func<string> bcryptDelegate = () => bcryptHasher.Hash(myPassword);
+            ShowHashProcessData("BCrypt", myPassword, bcryptDelegate);
+
+            #endregion
+
+
+            #region SCrypt
+
+            var scryptHasher = serviceProvider.GetService<ISCryptHasher>();
+            Func<string> scryptDelegate = () => scryptHasher.Hash(myPassword);
+            ShowHashProcessData("SCrypt", myPassword, scryptDelegate);
+
+            #endregion
+
+            #region Sha1
+
+            var sha1Hasher = serviceProvider.GetService<ISha1Hasher>();
+            Func<string> sha1Delegate = () => sha1Hasher.Hash(myPassword);
+            ShowHashProcessData("Sha1", myPassword, sha1Delegate);
+
+            #endregion
 
             Console.ReadKey();
         }
