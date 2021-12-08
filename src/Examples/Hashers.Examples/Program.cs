@@ -61,7 +61,7 @@ namespace Hashers.Examples
         {
             var serviceProvider = GetServiceProvider();
             
-            string myPassword = "Password to hash!";
+            string myPassword = "Hello World!";
 
             #region Argon2
 
@@ -78,7 +78,6 @@ namespace Hashers.Examples
             ShowHashProcessData("BCrypt", myPassword, bcryptDelegate);
 
             #endregion
-
 
             #region SCrypt
 

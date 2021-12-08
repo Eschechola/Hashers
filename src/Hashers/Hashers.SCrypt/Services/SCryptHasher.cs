@@ -17,6 +17,6 @@ namespace Hashers.Services
 
 
         public bool VerifyHashedPassword(string password, string hashedPassword)
-            => hashedPassword == Hash(password);
+            => _encoder.Compare(password, hashedPassword);
     }
 }
